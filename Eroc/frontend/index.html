@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Veritas - Answers only with proof</title>
+<title>Eroc - Answers only with proof</title>
 <style>
 /* ===== Design tokens (light) ===== */
 :root{--bg:#f6f4f1;--surface:#fff;--surface2:#faf8f6;--border:#e4dfd9;--text:#1d1b20;--muted:#6b6670;
@@ -92,7 +92,7 @@ summary{cursor:pointer}.q summary{font-size:12.5px;color:var(--muted)}
 </style>
 </head>
 <body>
-<header><h1>Veritas</h1><small>Answers only with proof. Flags conflicts. Says "I don't have proof".</small><span class="sp"></span>
+<header><h1 style="display:flex;align-items:center;gap:8px"><svg viewBox="0 0 24 24" style="width:26px;height:26px" aria-hidden="true"><rect width="24" height="24" rx="7" fill="#fff" fill-opacity=".18" stroke="none"/><path d="M9 7h7M9 12h5M9 17h7M9 7v10" stroke="#fff" stroke-width="2.2" stroke-linecap="round" fill="none"/></svg>Eroc</h1><small>Answers only with proof. Flags conflicts. Says "I don't have proof".</small><span class="sp"></span>
 <span id="health"><i id="dot"></i><span id="htxt">checking Ollama…</span></span>
 <button id="theme" aria-label="Toggle light or dark theme"><svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button></header>
 <main>
@@ -118,7 +118,7 @@ summary{cursor:pointer}.q summary{font-size:12.5px;color:var(--muted)}
         <div class="guide"><div><b>1 · Upload</b>Add your PDFs on the left.</div><div><b>2 · Ask</b>Type a question in English or Hindi.</div><div><b>3 · Verify</b>Click a citation to see the exact page.</div></div></div></div>
     </div>
     <div id="tab-claim" hidden>
-      <p class="mut">State facts, one per line. Veritas answers <b>Supported</b>, <b>Contradicted</b>, <b>Partial</b> or <b>Not found</b>, with the quote and page.</p>
+      <p class="mut">State facts, one per line. Eroc answers <b>Supported</b>, <b>Contradicted</b>, <b>Partial</b> or <b>Not found</b>, with the quote and page.</p>
       <textarea id="claims" rows="5" aria-label="Claims to check" placeholder="Name: Ramesh Kumar&#10;Date of Death: 09-07-2010&#10;सार्थक का जन्म 12-03-2004 को हुआ"></textarea>
       <div class="row" style="margin-top:8px"><button class="pri" id="chk">Check claims</button><span id="chkstat" class="mut"></span></div>
       <div id="claimout" aria-live="polite"></div>
@@ -306,10 +306,10 @@ function render(r){
   h+=`<details class="mut" style="margin-top:10px"><summary>Details</summary>as of ${esc(r.as_of)} · best retrieval similarity ${r.retrieval.best_sim} · ${r.seconds}s${r.cached?" (cached)":""}${tm?" · "+tm:""}</details>`;
   $("#out").innerHTML=h;
   if($("#copy"))$("#copy").onclick=()=>{navigator.clipboard.writeText(report());toast("Copied",true)};
-  if($("#md"))$("#md").onclick=()=>{const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([report()],{type:"text/markdown"}));a.download="veritas-answer.md";a.click()};
+  if($("#md"))$("#md").onclick=()=>{const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([report()],{type:"text/markdown"}));a.download="eroc-answer.md";a.click()};
 }
 function report(){let n=0,src=[];const body=LAST.answer.map(a=>a.text+" "+a.citations.map(c=>{src.push(`[${++n}] ${c.doc}, p.${c.page}: “${c.quote}”`);return `[${n}]`}).join("")).join("\n\n");
-  return `Q: ${$("#q").value}\n\n${body}\n\nSources:\n${src.join("\n")}\n\n(Veritas · as of ${LAST.as_of})`}
+  return `Q: ${$("#q").value}\n\n${body}\n\nSources:\n${src.join("\n")}\n\n(Eroc · as of ${LAST.as_of})`}
 
 /* ---------- claim check ---------- */
 const VERDICT={supported:["ok","✓ Supported"],contradicted:["bad","✗ Contradicted"],partial:["warn","~ Partial"],not_found:["","? Not found"]};
