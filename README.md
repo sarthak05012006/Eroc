@@ -1,4 +1,4 @@
-# Veritas
+# Eroc
 
 > Ask questions about your PDFs. Get answers **with proof**. If the proof is missing, VeriDoc says **"I don't have proof"** instead of making something up.
 
