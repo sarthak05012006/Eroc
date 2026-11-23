@@ -1,0 +1,11 @@
+fastapi>=0.110
+uvicorn[standard]>=0.29
+python-multipart>=0.0.9
+pymupdf>=1.24
+numpy>=1.26
+requests>=2.31
+# optional: OCR for scanned PDFs (also install the Tesseract binary)
+pytesseract>=0.3.10
+pillow>=10.0
+# optional: only to regenerate the demo PDFs
+reportlab>=4.0
