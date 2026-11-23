@@ -20,7 +20,7 @@ Normal AI chatbots have three problems with them:
 2. They **miss conflicts**, for example one page says "2%" and another says "3%".
 3. They **don't know which version is current** when a document has been amended several times.
 
-## 2. What Veritas does
+## 2. What Eroc does
 
 | Feature | What it means in simple words |
 |---|---|
@@ -185,11 +185,9 @@ If the top-right badge shows your model names, everything is connected.
 
 | Name | GitHub | Worked on |
 |---|---|---|
-| _Member 1_ | @sarthak05012006 | PDF reading and search (`ingest.py`, `store.py`, `textutil.py`) |
-| _Member 2_ | @adityasingh13177-lgtm | Answer checking (`qa.py`, `llm.py`) |
-| _Member 3_ | @aryanchande | Conflicts, amendments and tests (`reasoning.py`, `tests/`) |
-| _Member 4_ | @siddhartharya270407 | Web app and documentation (`main.py`, `frontend/`, `README.md`) |
+| _Sarthak Dewangan_ | @sarthak05012006 | PDF reading and search (`ingest.py`, `store.py`, `textutil.py`) |
+| _Aditya Singh_ | @adityasingh13177-lgtm | Answer checking (`qa.py`, `llm.py`) |
+| _Aryan Chande_ | @aryanchande | Conflicts, amendments and tests (`reasoning.py`, `tests/`) |
+| _Siddharth Arya_ | @siddhartharya270407 | Web app and documentation (`main.py`, `frontend/`, `README.md`) |
 
-## 11. License
 
-MIT. See `LICENSE`.
